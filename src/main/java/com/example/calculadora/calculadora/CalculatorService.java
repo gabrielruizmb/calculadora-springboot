@@ -5,8 +5,8 @@ public class CalculatorService {
 		return calculatorInput.numbersList().size();
 	}
 
-	public Double findSmallestNumber(CalculatorInput calculatorInput) {
-		Double smallestNumber = Double.MAX_VALUE;
+	public double findSmallestNumber(CalculatorInput calculatorInput) {
+		double smallestNumber = Double.MAX_VALUE;
 		for (Double number : calculatorInput.numbersList()) {
 			if (number < smallestNumber) {
 				smallestNumber = number;

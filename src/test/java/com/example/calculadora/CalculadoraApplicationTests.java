@@ -13,6 +13,8 @@ import com.example.calculadora.calculadora.CalculatorInput;
 @SpringBootTest
 class CalculadoraApplicationTests {
 
+	
+
 	@Test
 	void contextLoads() {
 		List<Double> numbersList = new ArrayList<>();
@@ -32,7 +34,8 @@ class CalculadoraApplicationTests {
 		// Teste da função que retorna o menor número da lista
 		Assert.assertEquals (
 			2.0, 
-			calculatorService.findSmallestNumber(calculatorInput)
+			calculatorService.findSmallestNumber(calculatorInput), 
+			2.0
 		);
 	}
 }
