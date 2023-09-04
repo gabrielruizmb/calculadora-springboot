@@ -7,11 +7,23 @@ public class CalculatorService {
 
 	public double findSmallestNumber(CalculatorInput calculatorInput) {
 		double smallestNumber = Double.MAX_VALUE;
+
 		for (Double number : calculatorInput.numbersList()) {
 			if (number < smallestNumber) {
 				smallestNumber = number;
 			}
 		}
 		return smallestNumber;
+	}
+
+	public double findBiggestNumber(CalculatorInput calculatorInput) {
+		double biggestNumber = Double.MIN_VALUE;
+		
+		for (Double number : calculatorInput.numbersList()) {
+			if (number > biggestNumber) {
+				biggestNumber = number;
+			}
+		}
+		return biggestNumber;
 	}
 }

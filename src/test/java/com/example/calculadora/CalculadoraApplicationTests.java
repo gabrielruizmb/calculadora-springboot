@@ -12,9 +12,6 @@ import com.example.calculadora.calculadora.CalculatorInput;
 
 @SpringBootTest
 class CalculadoraApplicationTests {
-
-	
-
 	@Test
 	void contextLoads() {
 		List<Double> numbersList = new ArrayList<>();
@@ -25,17 +22,24 @@ class CalculadoraApplicationTests {
 		CalculatorInput calculatorInput = new CalculatorInput(numbersList);
 		CalculatorService calculatorService = new CalculatorService();
 		
-		// Teste da função que retorna o tamanho da lista
+		// Testa a função que retorna o tamanho da lista
 		Assert.assertEquals (
 			3, 
 			calculatorService.listSize(calculatorInput)
 		);
 
-		// Teste da função que retorna o menor número da lista
+		// Testa a função que retorna o menor número da lista
 		Assert.assertEquals (
-			2.0, 
+			2, 
 			calculatorService.findSmallestNumber(calculatorInput), 
-			2.0
+			0
+		);
+
+		// Testa a função que retorna o maior número da lista
+		Assert.assertEquals(
+			5, 
+			calculatorService.findBiggestNumber(calculatorInput),
+			0
 		);
 	}
 }
