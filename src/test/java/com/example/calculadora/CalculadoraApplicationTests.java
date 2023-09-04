@@ -7,23 +7,32 @@ import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.example.calculadora.calculadora.CalculadoraService;
-import com.example.calculadora.calculadora.ValoresDeEntradaDTO;
+import com.example.calculadora.calculadora.CalculatorService;
+import com.example.calculadora.calculadora.CalculatorInput;
 
 @SpringBootTest
 class CalculadoraApplicationTests {
 
 	@Test
 	void contextLoads() {
-		List<Double> Entrada = new ArrayList<>();
-		Entrada.add(5.0);
-		Entrada.add(5.0);
-		Entrada.add(5.0);
+		List<Double> numbersList = new ArrayList<>();
+		numbersList.add(3.0);
+		numbersList.add(2.0);
+		numbersList.add(5.0);
 
-		ValoresDeEntradaDTO valoresDeEntradaDTO = new ValoresDeEntradaDTO(Entrada);
-		CalculadoraService calculadoraService = new CalculadoraService();
+		CalculatorInput calculatorInput = new CalculatorInput(numbersList);
+		CalculatorService calculatorService = new CalculatorService();
 		
-		Assert.assertEquals(3, calculadoraService.tamanhoDaLista(valoresDeEntradaDTO));
-	}
+		// Teste da função que retorna o tamanho da lista
+		Assert.assertEquals (
+			3, 
+			calculatorService.listSize(calculatorInput)
+		);
 
+		// Teste da função que retorna o menor número da lista
+		Assert.assertEquals (
+			2.0, 
+			calculatorService.findSmallestNumber(calculatorInput)
+		);
+	}
 }

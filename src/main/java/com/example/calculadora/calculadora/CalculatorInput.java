@@ -2,4 +2,4 @@ package com.example.calculadora.calculadora;
 
 import java.util.List;
 
-public record ValoresDeEntradaDTO(List<Double> Entrada) {}
+public record CalculatorInput(List<Double> numbersList) {}
