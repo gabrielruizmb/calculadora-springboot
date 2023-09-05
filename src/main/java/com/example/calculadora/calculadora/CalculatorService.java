@@ -1,6 +1,19 @@
 package com.example.calculadora.calculadora;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class CalculatorService {
+
+	public CalculatorOutput calculator(CalculatorInput calculatorInput) {
+		CalculatorOutput calculatorOutput = new CalculatorOutput(
+			listSize(calculatorInput), 
+			findSmallestNumber(calculatorInput), 
+			findBiggestNumber(calculatorInput)
+		);
+		return calculatorOutput;
+	}
+
 	public int listSize(CalculatorInput calculatorInput) {
 		return calculatorInput.numbersList().size();
 	}

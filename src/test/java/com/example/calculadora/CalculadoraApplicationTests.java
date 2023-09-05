@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.example.calculadora.calculadora.CalculatorService;
 import com.example.calculadora.calculadora.CalculatorInput;
+import com.example.calculadora.calculadora.CalculatorOutput;
 
 @SpringBootTest
 class CalculadoraApplicationTests {
@@ -21,6 +22,7 @@ class CalculadoraApplicationTests {
 
 		CalculatorInput calculatorInput = new CalculatorInput(numbersList);
 		CalculatorService calculatorService = new CalculatorService();
+		CalculatorOutput calculatorOutput = calculatorService.calculator(calculatorInput);
 		
 		// Testa a função que retorna o tamanho da lista
 		Assert.assertEquals (
@@ -41,5 +43,11 @@ class CalculadoraApplicationTests {
 			calculatorService.findBiggestNumber(calculatorInput),
 			0
 		);
+
+		Assert.assertTrue(
+			calculatorOutput.getListSize() == calculatorService.listSize(calculatorInput) &&
+			calculatorOutput.getSmallestNumber() == calculatorService.findSmallestNumber(calculatorInput) &&
+			calculatorOutput.getBiggestNumber() == calculatorService.findBiggestNumber(calculatorInput)
+		);;
 	}
 }
