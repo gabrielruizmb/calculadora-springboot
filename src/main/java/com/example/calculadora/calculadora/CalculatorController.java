@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/calculadora")
-public class CalculadoraController {
+public class CalculatorController {
     @Autowired
     CalculatorService calculatorService;
 

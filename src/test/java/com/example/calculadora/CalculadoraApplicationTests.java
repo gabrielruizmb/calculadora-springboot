@@ -18,7 +18,7 @@ class CalculadoraApplicationTests {
 		List<Double> numbersList = new ArrayList<>();
 		numbersList.add(3.0);
 		numbersList.add(2.0);
-		numbersList.add(5.0);
+		numbersList.add(7.0);
 
 		CalculatorInput calculatorInput = new CalculatorInput(numbersList);
 		CalculatorService calculatorService = new CalculatorService();
@@ -39,15 +39,23 @@ class CalculadoraApplicationTests {
 
 		// Testa a função que retorna o maior número da lista
 		Assert.assertEquals(
-			5, 
+			7, 
 			calculatorService.findBiggestNumber(calculatorInput),
 			0
 		);
 
+		// Testa a função calculadora
 		Assert.assertTrue(
 			calculatorOutput.getListSize() == calculatorService.listSize(calculatorInput) &&
 			calculatorOutput.getSmallestNumber() == calculatorService.findSmallestNumber(calculatorInput) &&
 			calculatorOutput.getBiggestNumber() == calculatorService.findBiggestNumber(calculatorInput)
 		);;
+
+		// Testa a função que retorna a média dos valores inseridos
+		// Assert.assertEquals(
+		// 	4, 
+		// 	calculatorService.calculateAverage(CalculatorInput),
+		// );
+
 	}
 }

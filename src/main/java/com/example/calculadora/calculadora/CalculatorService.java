@@ -39,4 +39,8 @@ public class CalculatorService {
 		}
 		return biggestNumber;
 	}
+
+	// public double calculateAverage(CalculatorInput calculatorInput) {
+
+	// }
 }
